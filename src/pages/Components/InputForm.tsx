@@ -47,7 +47,7 @@ const InputForm=({submitGuess, spells}:inputFormProps)=>{
             {filteredSpells.map(spell=>{
                 return (
                 <div className="flex hover:bg-blue-200" onClick={() => submitSpell(spell)} key={spell["name"]}>
-                    <Image style={{ height: "40px", width: "40px" }} src={spell["img"]} alt={`${spell["name"]} image`} width={"40"} height={"40"}/>
+                    <Image style={{ height: "40px", width: "40px" }} src={spell["img"]} alt={`${spell["name"]} image`} width={"40"} height={"40"} loading="eager"/>
                     <div>
                         {spell["name"]}
                     </div>
