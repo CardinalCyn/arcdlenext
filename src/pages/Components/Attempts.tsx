@@ -1,4 +1,5 @@
 import { SpellType } from "@/types/SpellType";
+import Image from "next/image";
 type attemptProps= {
     submissions:SpellType[];
     correctSpell:SpellType;
@@ -12,16 +13,16 @@ const Attempts=({submissions,correctSpell}:attemptProps)=>{
         <table className="mt-20 mx-auto table-fixed">
             <tbody className="">
                 <tr>
-                    {tableHeaders.map(header=>{
+                    {tableHeaders&&tableHeaders.map(header=>{
                         return <th key={header} className="">{header}</th>
                     })}
                 </tr>
                 {/* maps over each submission, checks if the property is img, itll return a stylized img, otherwise, itll check if key of property is equal to table elements'. green, yellow orange */}
-                {submissions.map(spellSubmitted=>{
+                {submissions&&submissions.map(spellSubmitted=>{
                     return(<tr key={spellSubmitted["name"]}>
-                        {tableElements.map((tableElement:string) => {
+                        {tableElements&&tableElements.map((tableElement:string) => {
                             if(tableElement==="img"){
-                                return <td key={tableElement} className="square-td"><img className="square-img" src={spellSubmitted[tableElement]} /></td>
+                                return <td key={tableElement} className="square-td"><Image alt={spellSubmitted["name"]} className="square-img" src={spellSubmitted[tableElement]} /></td>
                             }
                             return (
                                 <td

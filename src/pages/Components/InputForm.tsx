@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
 import { SpellType } from '@/types/SpellType';
+import Image from 'next/image';
 type inputFormProps= {
     submitGuess:Function;
     spells:SpellType[];
@@ -26,7 +27,7 @@ const InputForm=({submitGuess, spells}:inputFormProps)=>{
         setGuessField("");
     }
     //when u type, div appears below, showing all possible spells that you can use
-    const filterRooms=()=>{
+    useEffect(()=>{
         if(guessField){
             setFilteredSpells(uncheckedSpells.filter(spell=>{
                 return spell["name"].toLowerCase().includes(guessField.toLowerCase());
@@ -34,10 +35,7 @@ const InputForm=({submitGuess, spells}:inputFormProps)=>{
         }else{
             setFilteredSpells([]);
         }
-    }
-    useEffect(()=>{
-        filterRooms();
-    },[guessField])
+    },[guessField,uncheckedSpells])
 
     return (
         <div className="w-screen mt-10">
@@ -49,7 +47,7 @@ const InputForm=({submitGuess, spells}:inputFormProps)=>{
             {filteredSpells.map(spell=>{
                 return (
                 <div className="flex hover:bg-blue-200" onClick={() => submitSpell(spell)} key={spell["name"]}>
-                    <img style={{ height: "40px", width: "40px" }} src={spell["img"]} alt={`${spell["name"]} image`} />
+                    <Image style={{ height: "40px", width: "40px" }} src={spell["img"]} alt={`${spell["name"]} image`} />
                     <div>
                         {spell["name"]}
                     </div>
