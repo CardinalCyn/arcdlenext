@@ -22,7 +22,7 @@ const Attempts=({submissions,correctSpell}:attemptProps)=>{
                     return(<tr key={spellSubmitted["name"]}>
                         {tableElements&&tableElements.map((tableElement:string) => {
                             if(tableElement==="img"){
-                                return <td key={tableElement} className="square-td"><Image alt={spellSubmitted["name"]} className="square-img" src={spellSubmitted[tableElement]} /></td>
+                                return <td key={tableElement} className="square-td"><Image alt={spellSubmitted["name"]} className="square-img" src={spellSubmitted[tableElement]} width={"120"} height={"120"}/></td>
                             }
                             return (
                                 <td
