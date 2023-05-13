@@ -4,7 +4,6 @@ import Attempts from "./Components/Attempts"
 import { default as Spells } from './spells/spells.json'
 import { useState,useEffect } from "react"
 import { SpellType } from "@/types/SpellType"
-import html2canvas from 'html2canvas';
 
 const Home=()=>{
   
@@ -106,7 +105,10 @@ const Home=()=>{
             if (blob) {
               const item = new ClipboardItem({ [blob.type]: blob });
               navigator.clipboard.write([item]).then(() => {
-                
+                setCopyAttemptSuccess(true);
+                setTimeout(()=>{
+                  setCopyAttemptSuccess(false);
+                },3000)
               });
             }
           }, 'image/png');
@@ -131,7 +133,7 @@ const Home=()=>{
         </div>
         <button className="block mx-auto share p-1 rounded-md mt-2 text-black" onClick={()=>shareImage()}>Share</button>
         {copyAttemptSuccess&&
-        <div>Copied to clipboard</div>}
+        <div className="text-center">Copied to clipboard</div>}
       </div>}
       {submissions.length>0&&<Attempts submissions={submissions} correctSpell={correctSpell}/>}
       
