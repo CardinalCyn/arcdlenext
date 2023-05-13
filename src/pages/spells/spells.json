@@ -2283,7 +2283,7 @@
     "charges": "1",
     "initialTurnAvailable": "6",
     "cooldown": "-",
-    "tier": 1,
+    "tier": 3,
     "img": "/pictures/Summon Dryad.png",
     "damage": "N/A"
   },

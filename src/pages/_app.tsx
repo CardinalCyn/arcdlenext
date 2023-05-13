@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   <>
     <Head>
       <title>Arcdle</title>
+      <link rel="shortcut icon" href="/favicon/favicon.ico" />
     </Head>
     <Component {...pageProps} />
   </>
