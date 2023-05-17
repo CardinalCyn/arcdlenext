@@ -1675,7 +1675,7 @@
     "name": "Glide",
     "bookType": "Illusion",
     "targetingType": "Personal",
-    "charges": "4",
+    "charges": "Infinite",
     "initialTurnAvailable": "1",
     "cooldown": "5",
     "tier": 1,
@@ -1820,7 +1820,7 @@
     "targetingType": "Targeted",
     "charges": "Infinite",
     "initialTurnAvailable": "4",
-    "cooldown": "4",
+    "cooldown": "5",
     "tier": 1,
     "img": "/pictures/Barrage of Bones.png",
     "damage": "200"
