@@ -2294,7 +2294,7 @@
     "charges": "Infinite",
     "initialTurnAvailable": "6",
     "cooldown": "5",
-    "tier": 1,
+    "tier": 3,
     "img": "/pictures/The Four Seasons.png",
     "damage": "200"
   }
