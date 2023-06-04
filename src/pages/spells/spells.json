@@ -138,7 +138,7 @@
     "charges": "Infinite",
     "initialTurnAvailable": "4",
     "cooldown": "4",
-    "tier": 1,
+    "tier": 5,
     "img": "/pictures/Little Devil.png",
     "damage": "N/A"
   },
